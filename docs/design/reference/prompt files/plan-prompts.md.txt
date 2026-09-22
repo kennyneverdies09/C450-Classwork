@@ -1,0 +1,184 @@
+Create a plan.md file for my Video Game Collection Library (VGC Library).
+
+Use my specification.md as the main source. The plan should explain how the app will be built and should not just repeat the specification.
+
+Use this format:
+
+# Plan — Video Game Collection Library (VGC Library)
+
+## 1. Approach Summary
+
+Write a short summary explaining how the app will be built.
+
+The app will:
+- use HTML, CSS, and JavaScript
+- use the course web app template
+- use a local list of 12 games
+- not use login or user accounts
+- not use an outside database
+- not use a backend
+- use localStorage to save changes when available
+
+Keep this section simple and easy to understand.
+
+## 1.5 Tech Stack
+
+Use:
+
+- Frontend: HTML, CSS, JavaScript
+- Backend/DB: None
+- Data: Local JavaScript dataset
+- Hosting: GitHub Pages
+- Storage: Browser localStorage
+- Other services/APIs: None
+
+Do not add React, Firebase, Supabase, Node, or outside APIs.
+
+## 2. Key Decisions (ADRs)
+
+Create this table:
+
+| ADR # | Decision | Traces to (R#) | Alternatives considered | Why this one |
+|-------|----------|------------------|---------------------------|--------------|
+
+Include decisions for:
+
+- using HTML, CSS, and JavaScript
+- using a local dataset with 12 games
+- using localStorage
+- using card view as the main view and list view as another option
+- using search and filters in the browser
+- allowing more than one platform for a game
+- Physical and Digital ownership
+- keeping Dropped as a status but explaining what it means
+- allowing unreleased games to be added to Want to Play
+- using a number from 0–100 for completion percentage
+
+Every decision needs to connect back to the correct requirement numbers from specification.md.
+
+Also include another option that could have been used and explain why the option chosen works better for this project.
+
+## 3. Components / Building Blocks
+
+Create this table:
+
+| Component | Purpose | Related requirements |
+|-----------|---------|------------------------|
+
+Include:
+
+- Local Game Dataset
+- Card View
+- List View
+- Search
+- Status Filter
+- Platform Filter
+- Favorites Filter
+- Game Detail View
+- Status Editor
+- Favorite Control
+- Ownership Editor
+- Completion Percentage
+- Release Information
+- localStorage
+- No Results Message
+
+Explain what each part does and connect it to the correct requirements.
+
+## 4. Dependencies & Assumptions
+
+### Dependencies
+
+Include:
+
+- modern web browser
+- GitHub repository
+- GitHub Pages
+- course web app template
+- localStorage when available
+
+The first version should not need an outside API or database.
+
+### Assumptions
+
+Include:
+
+- the prototype will have 12 games
+- users will use a modern browser
+- JavaScript will be turned on
+- localStorage might be blocked or cleared
+- game information will be entered manually
+- this is a class project and not a production app
+- game images and information are being used for educational purposes
+
+## 5. Risks
+
+Create this table:
+
+| Risk | Likelihood | Impact | Mitigation | Owner |
+|------|------------|--------|------------|-------|
+
+Include risks such as:
+
+- localStorage not working or being cleared
+- search or filters showing the wrong games
+- multiple platforms becoming confusing
+- users not understanding Dropped
+- wrong completion percentage being entered
+- changes breaking the course template
+- adding too many extra features
+- GitHub Pages links not working
+- game images not loading
+- layout problems on smaller screens
+
+Use Low, Medium, or High for likelihood and impact.
+
+Give a way to handle each risk.
+
+Use Developer / Spec owner for the owner.
+
+## 6. Sequencing
+
+Put the work in this order:
+
+1. Review the course template
+2. Create the 12-game dataset
+3. Build the card view
+4. Build the game detail view
+5. Add list view
+6. Add search
+7. Add status, platform, and Favorites filters
+8. Add status editing
+9. Add Favorites editing
+10. Add ownership and platform editing
+11. Add Physical and Digital ownership
+12. Add completion percentage
+13. Add unreleased games and future release dates
+14. Add localStorage
+15. Add no-results and validation messages
+16. Test the requirements and acceptance criteria
+17. Check accessibility and smaller screen sizes
+18. Publish and test everything on GitHub Pages
+
+Give a short reason for why each step comes in that order.
+
+## 7. Review & Approval
+
+Use this table:
+
+| Reviewer | Date | Approved? |
+|----------|------|-----------|
+| Spec owner | | |
+
+Do not make up a date or approval.
+
+Do not add features that are not in specification.md.
+
+Do not create tasks.md yet.
+
+Before finishing, check that:
+- every ADR connects to a requirement
+- every component connects to a requirement
+- every risk has a way to handle it
+- the build order makes sense
+- the plan matches specification.md
