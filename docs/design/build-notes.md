@@ -101,8 +101,8 @@ The data path was updated without changing the CSV format or the existing applic
 The JavaScript structure is defined in `data/game-record.js` through `createGameRecord`. Each record includes:
 
 - `id`, `title`, `coverImage`, `description`, and `genre`
-- `releaseYear` and `releaseDate` for released or future-release information
-- `owned`, `ownershipType`, and `platforms` for ownership details
+- `releaseYear`, `releaseDate`, and `releasePlatforms` for released or future-release information
+- `owned`, `platformOwnership`, and `platforms` for ownership details
 - `status` and `favorite` for collection state
 - `completionPercentage` for applicable Playing games
 
@@ -233,13 +233,13 @@ The Favorite star updates shared state, and cards and list items display Favorit
 
 The detail view now includes an Owned checkbox and owned-platform checkboxes derived from the available records. Unchecking ownership clears owned platforms; re-enabling ownership allows multiple platforms. Browser verification changed Zelda to not owned, confirmed `Platforms: None`, then selected PS5 and Switch and confirmed both appeared in the detail view.
 
-## T33 Ownership Type Editor
+## T33 Ownership Type Editor — Superseded
 
-Owned games now have a Physical/Digital ownership-type select. Browser verification changed Minecraft from Digital to Physical and confirmed the detail metadata updated; the control is disabled for unowned Grand Theft Auto VI.
+The original implementation used one Physical/Digital ownership-type select for the whole game. This behavior was superseded by the approved per-platform ownership model and is covered by T57 and T58.
 
-## T34 Ownership Type Display
+## T34 Ownership Type Display — Superseded
 
-The selected ownership type is shown in the detail metadata. Browser verification selected Physical for Minecraft and confirmed `Ownership type: Physical` while the game remained owned.
+The original detail view displayed one game-wide ownership type. Current per-platform display evidence is recorded under T57 and T58.
 
 ## Ownership Model Revision — Per Platform
 
@@ -275,9 +275,9 @@ An automated browser workflow found Stardew Valley by title, identified PC as it
 
 The functional audit found no implemented behavior outside the approved R1-R26 scope. Leftover template wording on the landing and About pages was replaced with VGC Library content. Reloaded route checks confirmed the revised pages render correctly.
 
-## T53 Deployment Verification — Blocked
+## T53 Deployment Verification — Superseded
 
-The workspace contains no deployed GitHub Pages URL, workflow file, or CNAME configuration. T53 cannot be verified until the repository is deployed and its public URL is available.
+The initial deployment check was blocked because no deployed GitHub Pages URL, workflow file, or CNAME configuration was present. This was superseded by the successful deployed verification recorded in the following T53 section.
 
 ## T53 GitHub Pages Verification
 
@@ -361,9 +361,9 @@ Applied the approved VGC Library design system: dark `#121212` background, `#1E1
 
 The collection now uses original local funny placeholder tiles from `data/game-art.js` instead of remote `picsum.photos` images. All 12 cards and the detail view expose accessible original-placeholder labels and captions; no game artwork, logos, or character art was added.
 
-## T55 Final Sign-Off Review
+## T55 Final Review — Sign-Off Pending
 
-The completed implementation, local acceptance pass, deployed GitHub Pages checks, plan, and approved specification were reviewed together. R1-R26, ADR-00 through ADR-11, and completed tasks T1-T60 align with the deployed VGC Library prototype. The only remaining external validation is a human usability study; automated workflow coverage is recorded in T51.
+The completed implementation, local acceptance pass, deployed GitHub Pages checks, plan, and specification were reviewed together. R1-R26, ADR-00 through ADR-13, and completed tasks T1-T60 align with the deployed VGC Library prototype. Formal human approval remains pending in the approval sections of the specification and plan. The only remaining external validation is a human usability study; automated workflow coverage is recorded in T51.
 
 
 ## Revision History

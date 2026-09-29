@@ -105,4 +105,4 @@ Examples:
 
 | Version | Date | Change | Approved by |
 |---------|------|--------|-------------|
-| 1.0 | 2026-09-28 | Initial VGC Library design system finalized for front-end build | Spec owner |
+| 1.0 | 2026-09-28 | Initial VGC Library design system finalized for front-end build | Pending spec-owner sign-off |

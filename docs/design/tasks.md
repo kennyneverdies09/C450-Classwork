@@ -38,15 +38,15 @@ Derived from `plan.md` and the approved specification. This task list focuses on
 | T30 | Synchronize favorite indicators across card, list, detail, and Favorites-filter views. | R8, R10, R11, ADR-11 | T8, T22, T29 | Done |
 | T31 | Add owned/not-owned and multiple-platform editing controls. | R12, R21, R22, R25, ADR-06 | T14, T15 | Done |
 | T32 | Display every associated owned platform in card, list, and detail views. | R12, R22, ADR-06, ADR-11 | T8, T31 | Done |
-| T33 | Add Physical and Digital ownership-type choices for owned games. | R23, ADR-07 | T31 | Done |
-| T34 | Display the selected ownership type in the detail view. | R4, R23, ADR-07 | T8, T33 | Done |
+| T33 | Add Physical and Digital ownership-type choices separately for each owned platform. | R23, ADR-11 | T31 | Done |
+| T34 | Display each platform's selected ownership types in the detail view. | R4, R23, ADR-11 | T8, T33 | Done |
 | T35 | Add a numeric completion-percentage field for a Playing game. | R13, ADR-10 | T26 | Done |
 | T36 | Accept only whole-number completion values from 0 through 100. | R13, R14, ADR-10 | T35 | Done |
 | T37 | Reject invalid completion values and display a clear validation message. | R14, ADR-10 | T36 | Done |
 | T38 | Implement unreleased-game behavior so a game can remain not owned while marked Want to Play and display its future release date. | R21, R25, ADR-09 | T6, T15, T26, T31 | Done |
-| T39 | Define the localStorage data structure and validation rules for status, favorites, ownership/platform, ownership type, completion percentage, and view preference. | R18, R19, ADR-03 | T18, T27, T30, T31, T32, T33, T34, T35, T36 | Done |
-| T40 | Implement safe loading of valid saved values into shared application state. | R18, R19, ADR-03, ADR-11 | T39 | Done |
-| T41 | Implement saving and unavailable-storage fallback so the app continues in memory when localStorage cannot be used. | R18, R19, ADR-03 | T39, T40 | Done |
+| T39 | Define the localStorage data structure and validation rules for status, favorites, ownership/platform, ownership type, completion percentage, and view preference. | R18, R19, ADR-02 | T18, T27, T30, T31, T32, T33, T34, T35, T36 | Done |
+| T40 | Implement safe loading of valid saved values into shared application state. | R18, R19, ADR-02, ADR-11 | T39 | Done |
+| T41 | Implement saving and unavailable-storage fallback so the app continues in memory when localStorage cannot be used. | R18, R19, ADR-02 | T39, T40 | Done |
 | T42 | Test refresh persistence, invalid stored data, and blocked-storage behavior. | R18, R19 | T39, T40, T41 | Done |
 | T43 | Audit all interactive controls for clear labels, native semantics, keyboard operation, visible focus, logical focus order, and non-color state indicators, then correct any issues. | R2-R17, R23-R25, ADR-13 | T18, T21, T22, T26, T29, T31, T33, T35 | Done |
 | T44 | Check text contrast, image alternative text, keyboard operation, and readable validation messages. | R1-R17, R21-R25, ADR-13 | T12, T37, T43 | Done |
@@ -57,10 +57,10 @@ Derived from `plan.md` and the approved specification. This task list focuses on
 | T49 | Test all five status values, the No Longer Interested revision, favorite changes, and the unreleased Want to Play workflow. | R9-R11, R21, R24, R25 | T26, T27, T28, T29, T30, T38 | Done |
 | T50 | Execute and record the formal acceptance test for every requirement from R1 through R26 in the local browser build. | R1-R26 | T13, T16, T19, T25, T28, T30, T32, T33, T34, T37, T38, T42, T44, T46, T47, T48, T49, T56, T57, T58 | Done |
 | T51 | Conduct the prototype success test for finding a game, identifying its platform, opening details, changing status, marking it favorite, and returning to the library in under two minutes without assistance. | R2, R4, R5, R9, R10, R17 | T50 | Done |
-| T52 | Verify the completed front end contains no features or behaviors outside the approved specification. | R1-R26, ADR-00-ADR-11 | T50 | Done |
-| T53 | Verify the deployed GitHub Pages version loads its HTML, CSS, JavaScript, local data, images, and navigation correctly. | R1-R26, ADR-01, ADR-02, ADR-10, ADR-11 | T52 | Done |
+| T52 | Verify the completed front end contains no features or behaviors outside the approved specification. | R1-R26, ADR-00-ADR-13 | T50 | Done |
+| T53 | Verify the deployed GitHub Pages version loads its HTML, CSS, JavaScript, local data, images, and navigation correctly. | R1-R26, ADR-01, ADR-02, ADR-10, ADR-11, ADR-12, ADR-13 | T52 | Done |
 | T54 | Repeat critical view, search, filter, detail, editing, persistence, and unavailable-storage tests on the deployed front end. | R1-R26 | T53 | Done |
-| T55 | Review the completed implementation, acceptance-test results, and deployed application against `plan.md` and the approved specification before project sign-off. | R1-R26, ADR-00-ADR-11 | T54 | Done |
+| T55 | Review the completed implementation, acceptance-test results, and deployed application against `plan.md` and the approved specification before project sign-off. | R1-R26, ADR-00-ADR-13 | T54 | Done |
 | T56 | Display announced release platforms separately for unreleased games. | R26, ADR-10 | T15, T38 | Done |
 | T57 | Add and display Physical/Digital ownership type separately for each owned platform. | R23, ADR-11 | T31, T33, T34, T39 | Done |
 | T58 | Allow Physical and Digital ownership toggles to be selected together for one owned platform. | R23, ADR-11 | T57 | Done |
