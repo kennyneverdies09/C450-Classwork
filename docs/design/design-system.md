@@ -86,7 +86,7 @@ Examples:
 - Use **Add to Favorites** instead of **Save Item to Favorite Collection**.
 - Use **No games found** instead of **Your query returned zero results**.
 - Use **Enter a number from 0 to 100** instead of **Invalid completion value**.
-- Use **Dropped means you started the game but do not plan to finish it** when explaining the Dropped status.
+- Use **No Longer Interested** as a direct status label without requiring an additional explanation.
 
 ## 8. Accessibility Standards
 

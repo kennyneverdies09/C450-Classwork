@@ -79,7 +79,7 @@ There are no outside APIs or databases required for the first version.
 | localStorage is blocked or cleared. | Medium | Medium | Allow the app to continue working during the current session even if the information cannot stay saved. | Developer / Spec owner |
 | Search or filters display the wrong games. | Medium | Medium | Test each filter and search option using the acceptance criteria. | Developer / Spec owner |
 | Multiple platform ownership becomes confusing. | Medium | Medium | Clearly show all selected platforms on the detail page and library view. | Developer / Spec owner |
-| Users do not understand the Dropped status. | Medium | Low | Add a short explanation of what Dropped means. | Developer / Spec owner |
+| Users do not understand the No Longer Interested status. | Low | Low | Use the direct status label without requiring an additional explanation. | Developer / Spec owner |
 | Invalid completion percentages are entered. | Medium | Low | Only allow whole numbers between 0 and 100 and show an error for invalid values. | Developer / Spec owner |
 | Changes to the original template break the layout. | Medium | Medium | Make changes in smaller steps and test the app after each major change. | Developer / Spec owner |
 | Too many new features are added. | High | Medium | Follow the specification and keep features such as sales, achievements, mods, and automatic imports out of the first version. | Developer / Spec owner |
@@ -111,7 +111,7 @@ There are no outside APIs or databases required for the first version.
    These filters depend on the game data already being displayed.
 
 8. **Add game status editing.**  
-   Users can change games between Want to Play, Not Started, Playing, Completed, and Dropped.
+    Users can change games between Want to Play, Not Started, Playing, Completed, and No Longer Interested.
 
 9. **Add Favorites editing.**  
    Users can mark or remove favorite games.

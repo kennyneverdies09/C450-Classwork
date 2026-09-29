@@ -44,7 +44,7 @@ At least 80% of prototype testers should be able to find a game, identify which 
 - Allow a user to select a game and view additional details.
 - Allow a user to search by game title.
 - Allow filtering by status, platform, and favorites.
-- Support the statuses "Want to Play," "Not Started," "Playing," "Completed," and "Dropped."
+- Support the statuses "Want to Play," "Not Started," "Playing," "Completed," and "No Longer Interested."
 - Allow "Want to Play" to be used for games the user does not yet own, including unreleased games.
 - Display announced release platforms for unreleased games without treating those platforms as owned platforms.
 - Allow a user to mark or unmark a game as a favorite.
@@ -228,7 +228,7 @@ Each sample game record must support the following information:
 | R21 | Set an unowned game to Want to Play. | The game keeps Want to Play status without being forced to Owned. |
 | R22 | Mark a game as owned on two platforms. | Both platforms remain visible in the collection/detail information. |
 | R23 | Mark a game as both Physical and Digital on PS5 and Digital on Switch. | Each platform displays and saves its selected ownership types independently. |
-| R24 | Set a game to No Longer Interested and view its status information. | No Longer Interested is visible and no Dropped explanation appears. |
+| R24 | Set a game to No Longer Interested and view its status information. | No Longer Interested is visible without requiring an additional explanation. |
 | R25 | Mark an unreleased game as Want to Play. | The game remains not owned and its future release date is displayed when available. |
 | R26 | Open an unreleased game with announced release platforms. | The planned release platforms are displayed separately from owned platforms. |
 
@@ -257,7 +257,7 @@ All first-version questions identified during drafting and user research have be
 | Should live sales, achievements, mods, launching games, and custom artwork be included? | Spec owner | Resolved — no; these are future/out-of-scope features. |
 | Should Want to Play include games the user does not yet own? | Spec owner | Resolved — yes, including unreleased games. |
 | Should owned games show Physical or Digital ownership? | Prototype evaluation | Resolved — yes. |
-| Does the Dropped status need more explanation? | Prototype evaluation | Resolved — yes, include a short explanation in the interface. |
+| Does the No Longer Interested status need an additional explanation? | Prototype evaluation | Resolved — no; the status label is sufficient. |
 | How many games should be included in the prototype dataset? | Spec owner | Resolved — 12 sample games. |
 
 ---

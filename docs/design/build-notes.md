@@ -207,7 +207,7 @@ The card and list views were each tested for title search, status, platform, Fav
 
 ## T26 Status Editor
 
-The detail view now includes a labeled status editor with the five approved values: Want to Play, Not Started, Playing, Completed, and Dropped. Browser verification confirmed the editor starts at the selected game's current status and can select Dropped locally; shared-state mutation remains T27 scope.
+The detail view now includes a labeled status editor with the five approved values: Want to Play, Not Started, Playing, Completed, and No Longer Interested. Browser verification confirmed the editor starts at the selected game's current status and can select No Longer Interested locally; shared-state mutation remains T27 scope.
 
 ## T27 Immediate Status Updates
 
