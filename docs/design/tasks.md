@@ -58,9 +58,9 @@ Derived from `plan.md` and the approved specification. This task list focuses on
 | T50 | Execute and record the formal acceptance test for every requirement from R1 through R26 in the local browser build. | R1-R26 | T13, T16, T19, T25, T28, T30, T32, T33, T34, T37, T38, T42, T44, T46, T47, T48, T49, T56, T57, T58 | Done |
 | T51 | Conduct the prototype success test for finding a game, identifying its platform, opening details, changing status, marking it favorite, and returning to the library in under two minutes without assistance. | R2, R4, R5, R9, R10, R17 | T50 | Done |
 | T52 | Verify the completed front end contains no features or behaviors outside the approved specification. | R1-R26, ADR-00-ADR-11 | T50 | Done |
-| T53 | Verify the deployed GitHub Pages version loads its HTML, CSS, JavaScript, local data, images, and navigation correctly. | R1-R26, ADR-01, ADR-02, ADR-10, ADR-11 | T52 | Blocked |
-| T54 | Repeat critical view, search, filter, detail, editing, persistence, and unavailable-storage tests on the deployed front end. | R1-R25 | T53 | Not started |
-| T55 | Review the completed implementation, acceptance-test results, and deployed application against `plan.md` and the approved specification before project sign-off. | R1-R25, ADR-01-ADR-13 | T54 | Not started |
+| T53 | Verify the deployed GitHub Pages version loads its HTML, CSS, JavaScript, local data, images, and navigation correctly. | R1-R26, ADR-01, ADR-02, ADR-10, ADR-11 | T52 | Done |
+| T54 | Repeat critical view, search, filter, detail, editing, persistence, and unavailable-storage tests on the deployed front end. | R1-R26 | T53 | Done |
+| T55 | Review the completed implementation, acceptance-test results, and deployed application against `plan.md` and the approved specification before project sign-off. | R1-R26, ADR-00-ADR-11 | T54 | Done |
 | T56 | Display announced release platforms separately for unreleased games. | R26, ADR-10 | T15, T38 | Done |
 | T57 | Add and display Physical/Digital ownership type separately for each owned platform. | R23, ADR-11 | T31, T33, T34, T39 | Done |
 | T58 | Allow Physical and Digital ownership toggles to be selected together for one owned platform. | R23, ADR-11 | T57 | Done |
@@ -79,7 +79,7 @@ Derived from `plan.md` and the approved specification. This task list focuses on
 
 | Task | Blocker | Raised | Resolved |
 |------|---------|--------|----------|
-| T53 | No deployed GitHub Pages URL, workflow, or CNAME configuration is present in the workspace. | 2026-09-28 | |
+| T53 | No deployed GitHub Pages URL, workflow, or CNAME configuration is present in the workspace. | 2026-09-28 | 2026-09-28 — verified at https://kennyneverdies09.github.io/C450-Classwork/#/ |
 
 ## Quick Self-Check Before You Start Building
 

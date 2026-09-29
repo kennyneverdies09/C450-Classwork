@@ -38,7 +38,7 @@ VGC Library will be built as a simple front-end web application using HTML, CSS,
 | Card View | Shows games using game-cover cards with basic information. | R1, R2 |
 | List View | Shows the same games in a smaller list format. | R3 |
 | Search | Lets users search for games by title. | R5, R15, R16 |
-| Status Filter | Filters games by Want to Play, Not Started, Playing, Completed, or Dropped. | R6, R15, R16 |
+| Status Filter | Filters games by Want to Play, Not Started, Playing, Completed, or No Longer Interested. | R6, R15, R16 |
 | Platform Filter | Filters the collection based on platform. | R7, R15, R16 |
 | Favorites Filter | Shows only games marked as favorites. | R8 |
 | Game Detail View | Shows more information about one game. | R4 |
