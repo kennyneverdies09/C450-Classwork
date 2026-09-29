@@ -24,9 +24,11 @@ VGC Library will be built as a simple front-end web application using HTML, CSS,
 | ADR-04 | Use client-side search and filters. | R5, R6, R7, R8, R15, R16 | Server-side searching and filtering | The game collection is small, so the browser can handle searching and filtering without a server. |
 | ADR-05 | Allow more than one platform to be connected to a game. | R12, R22 | Only allow one platform per game | Users may own the same game on more than one platform, so only allowing one would not match how they use their collections. |
 | ADR-06 | Include Physical and Digital ownership types. | R23 | Only show owned or not owned | Prototype testing showed that users wanted to know how they owned the game. |
-| ADR-07 | Keep Dropped as a status but explain what it means. | R24 | Remove the Dropped status | Some users wanted the status, but prototype testing showed that the meaning was not clear to everyone. |
+| ADR-07 | Use No Longer Interested as a status without an additional explanation. | R24 | Keep Dropped with an explanation | The revised status wording is direct and does not need extra interface text. |
 | ADR-08 | Allow unreleased games to be marked Want to Play without being owned. | R21, R25 | Only allow released or owned games | A tester wanted a way to keep track of games that have not been released yet. |
 | ADR-09 | Use a numeric field from 0-100 for completion percentage. | R13, R14 | Slider or no progress field | A number gives the user a clear way to enter exact completion progress. |
+| ADR-10 | Store announced release platforms separately from owned platforms. | R26 | Reuse the owned-platform field | Planned availability must not imply that the user owns the game. |
+| ADR-11 | Store one or both ownership types separately for each owned platform. | R23 | Keep one ownership type per game or force one type per platform | A user may own physical and digital copies on the same system. |
 
 ## 3. Components / Building Blocks
 
@@ -42,9 +44,9 @@ VGC Library will be built as a simple front-end web application using HTML, CSS,
 | Game Detail View | Shows more information about one game. | R4 |
 | Status Editor | Lets users change the status of a game. | R9, R21, R24, R25 |
 | Favorite Control | Lets users add or remove a game from Favorites. | R10, R11 |
-| Ownership Editor | Lets users mark games as owned, choose platforms, and select Physical or Digital ownership. | R12, R22, R23 |
+| Ownership Editor | Lets users mark games as owned, choose platforms, and select Physical or Digital ownership for each platform. | R12, R22, R23 |
 | Completion Percentage | Lets users enter progress from 0-100. | R13, R14 |
-| Release Information | Shows release information, including future release dates. | R25 |
+| Release Information | Shows release information, including future release dates and announced release platforms. | R25, R26 |
 | localStorage | Saves game changes and view settings in the browser. | R18, R19 |
 | No Results Message | Lets the user know when a search or filter does not return any games. | R15 |
 
@@ -146,3 +148,13 @@ There are no outside APIs or databases required for the first version.
 | Reviewer | Date | Approved? |
 |----------|------|-----------|
 | Spec owner | | |
+
+## 8. Revision History
+
+| Date | Revision | Impact |
+|------|----------|--------|
+| 2026-09-28 | Recorded implementation alignment through T22. | At the time of this entry, no new ADR was approved and `releasePlatforms` remained a proposal. |
+| 2026-09-28 | Approved ADR-10 for separate release-platform data. | Add `releasePlatforms` for unreleased games; Grand Theft Auto VI will list PS5 while remaining not owned. |
+| 2026-09-28 | Revised ADR-07 and R24 status wording. | Replace Dropped with No Longer Interested and remove the explanation behavior. |
+| 2026-09-28 | Approved ADR-11 for per-platform ownership types. | Add `platformOwnership` so PS5 and Switch can store different Physical/Digital values. |
+| 2026-09-28 | Revised ADR-11 to allow both types per platform. | Each `platformOwnership` value is now an array of selected Physical/Digital types. |

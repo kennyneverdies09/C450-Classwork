@@ -46,6 +46,7 @@ At least 80% of prototype testers should be able to find a game, identify which 
 - Allow filtering by status, platform, and favorites.
 - Support the statuses "Want to Play," "Not Started," "Playing," "Completed," and "Dropped."
 - Allow "Want to Play" to be used for games the user does not yet own, including unreleased games.
+- Display announced release platforms for unreleased games without treating those platforms as owned platforms.
 - Allow a user to mark or unmark a game as a favorite.
 - Allow one game to be associated with more than one owned platform.
 - Allow owned games to be marked as Physical or Digital.
@@ -78,7 +79,7 @@ At least 80% of prototype testers should be able to find a game, identify which 
 | Not Started | The user owns or has access to the game but has not started playing it. |
 | Playing | The user is currently playing the game. |
 | Completed | The user considers the game completed. |
-| Dropped | The user started the game but stopped playing it and does not currently plan to finish it. The interface should include a short explanation so the meaning is clear. |
+| No Longer Interested | The user no longer plans to continue with the game. No additional explanation is required. |
 
 ### Game Data
 
@@ -92,8 +93,9 @@ Each sample game record must support the following information:
 - Release year
 - Release date or future release date when applicable
 - Owned/not owned state
-- Ownership type: Physical or Digital when the game is owned
+- Ownership type per owned platform: Physical, Digital, or both
 - One or more owned platforms
+- Announced release platforms when applicable
 - Current status
 - Favorite state
 - Completion percentage when applicable
@@ -192,9 +194,10 @@ Each sample game record must support the following information:
 | R20 | The system shall use a simulated/local dataset of 12 games for the prototype. | Ubiquitous |
 | R21 | While a game has the status Want to Play, the system shall allow the game to remain marked as not owned. | State |
 | R22 | While a game is marked as owned on more than one platform, the system shall display all associated owned platforms. | State |
-| R23 | When a user marks a game as owned, the system shall allow the user to select Physical or Digital as the ownership type. | Event |
-| R24 | While a game has the Dropped status, the system shall display a short explanation that the user stopped playing and does not currently plan to finish the game. | State |
+| R23 | When a user owns a game on one or more platforms, the system shall allow the user to select Physical, Digital, or both ownership types separately for each owned platform. | Event |
+| R24 | While a game has the No Longer Interested status, the system shall display that status without requiring an additional explanation. | State |
 | R25 | When an unreleased game is marked Want to Play, the system shall allow the game to remain not owned and display its future release date when available. | Event |
+| R26 | When an unreleased game has announced release platforms, the system shall display those platforms separately from platforms the user owns. | Event |
 
 ---
 
@@ -224,9 +227,10 @@ Each sample game record must support the following information:
 | R20 | Run the prototype without a remote database. | Exactly 12 sample games load from local project data. |
 | R21 | Set an unowned game to Want to Play. | The game keeps Want to Play status without being forced to Owned. |
 | R22 | Mark a game as owned on two platforms. | Both platforms remain visible in the collection/detail information. |
-| R23 | Mark an owned game as Physical, then change it to Digital. | The selected ownership type is shown and saved correctly. |
-| R24 | Set a game to Dropped and view its status information. | A short explanation of Dropped is visible. |
+| R23 | Mark a game as both Physical and Digital on PS5 and Digital on Switch. | Each platform displays and saves its selected ownership types independently. |
+| R24 | Set a game to No Longer Interested and view its status information. | No Longer Interested is visible and no Dropped explanation appears. |
 | R25 | Mark an unreleased game as Want to Play. | The game remains not owned and its future release date is displayed when available. |
+| R26 | Open an unreleased game with announced release platforms. | The planned release platforms are displayed separately from owned platforms. |
 
 ---
 
@@ -275,6 +279,16 @@ Do not skip from the specification directly to implementation without reviewing 
 |------|------|------|-------------|
 | Spec owner | | | |
 | Reviewer | | | |
+
+## 10. Revision History
+
+| Date | Revision | Impact |
+|------|----------|--------|
+| 2026-09-28 | Recorded implementation alignment through T22. | At the time of this entry, planned release-platform display remained outside the approved specification. |
+| 2026-09-28 | Approved R26 for separate unreleased-game release-platform display. | Add `releasePlatforms` as a distinct field from owned `platforms`; Grand Theft Auto VI will use PS5. |
+| 2026-09-28 | Revised R24 to replace Dropped with No Longer Interested. | Remove the Dropped explanation requirement and use the new status in the approved status list. |
+| 2026-09-28 | Revised R23 for per-platform ownership types. | Replace the game-wide ownership type with `platformOwnership`, allowing examples such as PS5 Physical and Switch Digital. |
+| 2026-09-28 | Revised R23 to allow both ownership types per platform. | `platformOwnership` values may contain Physical, Digital, or both for each owned platform. |
 
 ---
 

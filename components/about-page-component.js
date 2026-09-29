@@ -3,7 +3,7 @@ export default {
   template: /* html */ `
     <section class="container py-4">
       <h1>About</h1>
-      <p>This page is about the designer and builder of this app, including their background, portfolio of other work, and future career intentions.</p>
+      <p>VGC Library is a course prototype for organizing a local video game collection without external accounts or gaming-service connections.</p>
     </section>
   `,
 };

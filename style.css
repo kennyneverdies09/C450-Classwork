@@ -1,5 +1,255 @@
+:root {
+  --vgc-primary: #6C63FF;
+  --vgc-secondary: #00B8D9;
+  --vgc-background: #121212;
+  --vgc-surface: #1E1E1E;
+  --vgc-text: #F5F5F5;
+  --vgc-muted: #B0B0B0;
+  --vgc-error: #FF5A5F;
+}
+
+html,
+body {
+  background: var(--vgc-background) !important;
+  color: var(--vgc-text);
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+body {
+  min-width: 320px;
+}
+
+.vgc-navbar {
+  background: var(--vgc-surface) !important;
+  border-bottom: 1px solid #343434 !important;
+}
+
+.vgc-brand {
+  color: var(--vgc-text) !important;
+  font-size: 24px;
+}
+
+.vgc-nav-link {
+  color: var(--vgc-text) !important;
+  border: 1px solid #4A4A4A;
+  border-radius: 8px;
+}
+
+.vgc-nav-link:hover,
+.vgc-nav-link:focus-visible {
+  color: var(--vgc-text) !important;
+  background: var(--vgc-primary) !important;
+  border-color: var(--vgc-primary);
+}
+
+main {
+  background: var(--vgc-background);
+}
+
+.container {
+  max-width: 1200px;
+}
+
+h1,
+h2,
+h3,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  color: var(--vgc-text);
+  font-family: Arial, sans-serif;
+}
+
+.text-muted {
+  color: var(--vgc-muted) !important;
+}
+
+.card,
+.list-group-item {
+  color: var(--vgc-text);
+  background: var(--vgc-surface);
+  border-color: #343434 !important;
+  border-radius: 8px !important;
+}
+
+.card-title,
+.card-text,
+.list-group-item p {
+  color: var(--vgc-text);
+}
+
+.btn-primary {
+  background: var(--vgc-primary) !important;
+  border-color: var(--vgc-primary) !important;
+  color: var(--vgc-text) !important;
+  border-radius: 8px;
+}
+
+.btn-outline-primary,
+.btn-outline-secondary {
+  color: var(--vgc-text) !important;
+  border-color: #6A6A6A !important;
+  border-radius: 8px;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-secondary:hover,
+.btn-outline-primary:focus-visible,
+.btn-outline-secondary:focus-visible {
+  color: var(--vgc-text) !important;
+  background: var(--vgc-primary) !important;
+  border-color: var(--vgc-primary) !important;
+}
+
+.btn-link {
+  color: var(--vgc-secondary);
+}
+
+.form-control,
+.form-select {
+  color: var(--vgc-text);
+  background-color: #181818;
+  border-color: #5A5A5A;
+  border-radius: 8px;
+}
+
+.form-control::placeholder {
+  color: var(--vgc-muted);
+}
+
+.form-control:focus,
+.form-select:focus {
+  color: var(--vgc-text);
+  background-color: #181818;
+  border-color: var(--vgc-secondary);
+  box-shadow: 0 0 0 0.2rem rgba(0, 184, 217, 0.25);
+}
+
+.form-label,
+.form-check-label,
+legend {
+  color: var(--vgc-text);
+}
+
+.badge.text-bg-primary {
+  color: var(--vgc-text) !important;
+  background-color: var(--vgc-primary) !important;
+}
+
+.badge.text-bg-light {
+  color: var(--vgc-text) !important;
+  background-color: var(--vgc-surface) !important;
+  border-color: #5A5A5A !important;
+}
+
+.badge.text-bg-secondary {
+  color: var(--vgc-text) !important;
+  background-color: #4A4A4A !important;
+}
+
+.alert-warning {
+  color: #FFF3CD;
+  background: #3A3218;
+  border-color: #806B22;
+}
+
+.alert-danger,
+.text-danger {
+  color: var(--vgc-error) !important;
+}
+
+.alert-secondary {
+  color: var(--vgc-text);
+  background: #2B2B2B;
+  border-color: #4A4A4A;
+}
+
+.favorite-toggle {
+  color: var(--vgc-secondary);
+}
+
 .collection-card-image {
   height: 180px;
+}
+
+.game-cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+  color: #F5F5F5;
+  text-align: center;
+  background: #385B73;
+}
+
+.game-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: .25;
+  background: repeating-linear-gradient(135deg, transparent 0 14px, #fff 15px 16px);
+}
+
+.game-cover-icon,
+.game-cover-caption {
+  position: relative;
+  z-index: 1;
+}
+
+.game-cover-icon {
+  font-size: 48px;
+  line-height: 1;
+}
+
+.game-cover-caption {
+  max-width: 220px;
+  font-size: 14px;
+  font-weight: 700;
+  text-shadow: 0 2px 8px #000;
+}
+
+.game-cover-minecraft { background: #3F7650; }
+.game-cover-stardew-valley { background: #76553E; }
+.game-cover-breath-of-the-wild { background: #806C36; }
+.game-cover-mario-kart-8-deluxe { background: #A83F38; }
+.game-cover-hades { background: #71334A; }
+.game-cover-hollow-knight { background: #3B4658; }
+.game-cover-animal-crossing-new-horizons { background: #4C826D; }
+.game-cover-portal-2 { background: #376B80; }
+.game-cover-celeste { background: #4E6198; }
+.game-cover-elden-ring { background: #66513B; }
+.game-cover-the-witcher-3 { background: #3E3D3A; }
+.game-cover-grand-theft-auto-vi { background: #7D5368; }
+
+.list-item-image {
+  width: 80px;
+  height: 80px;
+  flex: 0 0 80px;
+}
+
+.list-item-image .game-cover-caption {
+  display: none;
+}
+
+.favorite-toggle {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #00B8D9 !important;
+  outline-offset: 2px !important;
 }
 
 .collection-description {
@@ -12,4 +262,58 @@
 
 .item-detail-image {
   max-height: 320px;
+  min-height: 280px;
+}
+
+.item-detail-image.game-cover {
+  height: 320px;
+}
+
+@media (max-width: 575.98px) {
+  .collection-page,
+  .detail-page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .library-controls .btn-group {
+    display: flex;
+    width: 100%;
+  }
+
+  .library-controls .btn-group .btn {
+    flex: 1 1 50%;
+  }
+
+  .list-area .list-group-item {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .list-area .list-item-image {
+    width: 64px;
+    height: 64px;
+    flex-basis: 64px;
+  }
+
+  .list-area .list-group-item > .flex-grow-1 {
+    min-width: 0;
+    flex-basis: calc(100% - 80px);
+  }
+
+  .list-area .list-group-item > .btn {
+    width: 100%;
+  }
+
+  .detail-page .card-body {
+    padding: 16px !important;
+  }
+
+  .detail-page .btn-group {
+    flex-wrap: wrap;
+  }
+
+  .detail-page .btn-group .btn {
+    flex: 1 1 50%;
+  }
 }
