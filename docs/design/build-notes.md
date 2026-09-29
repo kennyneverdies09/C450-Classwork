@@ -165,7 +165,7 @@ The existing ID-based detail links were verified as the selection behavior. Clic
 
 ## T15 Detail Information
 
-The detail view now reads normalized game fields and displays title, cover, genre, description, ownership state, all platforms, ownership type, status, favorite state, release date, and completion percentage for Playing games. Minecraft verified the owned multi-platform and 60% completion case. Grand Theft Auto VI verified the unowned Want to Play and `2026-11-19` future-release case without showing completion.
+The detail view now reads normalized game fields and displays title, cover, genre, description, ownership state, all platforms, per-platform ownership types, status, favorite state, release date, and completion percentage for Playing games. Minecraft verified the owned multi-platform and 60% completion case. Grand Theft Auto VI verified the unowned Want to Play and `2026-11-19` future-release case without showing completion.
 
 ## T16 Back Navigation
 
@@ -253,17 +253,17 @@ Current testing evidence: T57 and T58 verify the approved per-platform display b
 
 ## Ownership Model Revision — Per Platform
 
-On 2026-09-28, the approved ownership model changed from one type per game to `platformOwnership`, a Physical/Digital value for each owned platform. T57 will implement and test examples such as PS5 Physical and Switch Digital. No application code has changed for this revision yet.
+On 2026-09-28, the approved ownership model changed from one type per game to `platformOwnership`, a Physical/Digital value for each owned platform. T57 records the completed initial per-platform implementation and testing, including examples such as PS5 Physical and Switch Digital.
 
 ## T57 Per-Platform Ownership Types
 
-The game schema, CSV data, storage snapshot, and detail editor now use `platformOwnership`. Minecraft is seeded as PS5 Physical and Switch Digital. Browser verification displayed both values, changed PS5 to Digital independently, and kept Switch Digital unchanged. The former single ownership-type editor is removed.
+The game schema, CSV data, storage snapshot, and detail editor now use `platformOwnership`. The initial T57 state seeded Minecraft as PS5 Physical and Switch Digital. Browser verification displayed both values, changed PS5 to Digital independently, and kept Switch Digital unchanged. The former single ownership-type editor is removed; T58 records the later approved support for both types on one platform.
 
 On 2026-09-28, the per-platform ownership-type dropdowns were replaced with Physical/Digital toggle buttons for each owned system. The selected button uses `aria-pressed` state; the data model and behavior are unchanged.
 
 ## Ownership Model Revision — Both Types Per Platform
 
-On 2026-09-28, the approved model was extended so each `platformOwnership` value may contain Physical, Digital, or both. T58 will implement independent toggle buttons per owned platform; code implementation has not started.
+On 2026-09-28, the approved model was extended so each `platformOwnership` value may contain Physical, Digital, or both. T58 completed the independent toggle-button implementation and testing for each owned platform.
 
 ## T58 Both Ownership Types Per Platform
 
@@ -377,7 +377,7 @@ The collection now uses original local funny placeholder tiles from `data/game-a
 
 ## T55 Final Review — Sign-Off Pending
 
-The completed implementation, local acceptance pass, deployed GitHub Pages checks, plan, and specification were reviewed together. R1-R26, ADR-00 through ADR-13, and completed tasks T1-T60 align with the deployed VGC Library prototype. Formal human approval remains pending in the approval sections of the specification and plan. The only remaining external validation is a human usability study; automated workflow coverage is recorded in T51.
+The completed implementation, local acceptance pass, deployed GitHub Pages checks, plan, and specification were reviewed together. R1-R26, ADR-00 through ADR-13, and completed tasks T1-T60 align with the deployed VGC Library prototype. Human usability testing is complete at 4 of 4 testers, or 100% success. Formal human approval remains pending in the approval sections of the specification and plan.
 
 
 ## Revision History
@@ -386,3 +386,5 @@ The completed implementation, local acceptance pass, deployed GitHub Pages check
 |------|----------|--------|
 | 2026-09-28 | Added dated revision tracking across the design documents. | At the time of this entry, implementation progress through T22 was recorded and `releasePlatforms` remained a proposal. |
 | 2026-09-28 | Approved release-platform revision and added T56. | `releasePlatforms` is now approved as separate from owned `platforms`; Grand Theft Auto VI will list PS5 only. Implementation is not started yet. |
+| 2026-09-29 | Completed human usability testing for T51. | Four of four testers completed the workflow without assistance in under two minutes, meeting the 80% success target. |
+| 2026-09-29 | Updated current ownership, usability, and review notes. | Clarified completed T57/T58 behavior, per-platform detail wording, completed human testing, and remaining formal sign-off status. |
