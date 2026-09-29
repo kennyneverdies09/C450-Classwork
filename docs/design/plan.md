@@ -29,6 +29,8 @@ VGC Library will be built as a simple front-end web application using HTML, CSS,
 | ADR-09 | Use a numeric field from 0-100 for completion percentage. | R13, R14 | Slider or no progress field | A number gives the user a clear way to enter exact completion progress. |
 | ADR-10 | Store announced release platforms separately from owned platforms. | R26 | Reuse the owned-platform field | Planned availability must not imply that the user owns the game. |
 | ADR-11 | Store one or both ownership types separately for each owned platform. | R23 | Keep one ownership type per game or force one type per platform | A user may own physical and digital copies on the same system. |
+| ADR-12 | Reuse the existing route and detail-navigation structure for the prototype. | R4, R17 | Add a new navigation architecture | Keeping the existing route structure preserves the simple template flow and supports detail/back navigation. |
+| ADR-13 | Apply the approved accessibility and design-system rules to interactive controls and visual presentation. | R1-R17, R21-R26 | Add a separate UI framework or accessibility layer | The existing HTML, CSS, and JavaScript structure can meet the documented readability, labeling, focus, contrast, and responsive-layout expectations. |
 
 ## 3. Components / Building Blocks
 
