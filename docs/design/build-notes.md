@@ -96,6 +96,8 @@ The unchanged template was run and its layout, navigation, route behavior, conso
 
 The data path was updated without changing the CSV format or the existing application behavior.
 
+Verification: the listed paths and responsibilities were checked against the template structure, and no application behavior was changed as part of T3.
+
 ## T4 Game-Record Structure
 
 The JavaScript structure is defined in `data/game-record.js` through `createGameRecord`. Each record includes:
@@ -107,6 +109,8 @@ The JavaScript structure is defined in `data/game-record.js` through `createGame
 - `completionPercentage` for applicable Playing games
 
 The file also defines the approved status values and ownership types. It does not validate records or create the 12 sample games; those responsibilities belong to later tasks.
+
+Verification: the complete record structure is exercised by the validation in T7 and the detail, unreleased-game, and per-platform ownership checks in T15, T38, T57, and T58.
 
 ## T5 Sample Dataset
 
@@ -136,6 +140,8 @@ The browser and parsed CSV checks confirmed both required cases.
 ## T9 Page Structure
 
 The collection page now has named semantic regions for library controls, feedback messages, and the collection area. The detail page has named regions for detail navigation, feedback messages, and selected-game content. The new regions provide stable structure for later controls and renderers without adding search, filters, or editing behavior prematurely.
+
+Verification: the named collection and detail regions were exercised by the card, detail, back-navigation, and search/filter checks recorded in T13, T14, T16, and T25.
 
 ## T10 Default Card Renderer
 
@@ -237,9 +243,13 @@ The detail view now includes an Owned checkbox and owned-platform checkboxes der
 
 The original implementation used one Physical/Digital ownership-type select for the whole game. This behavior was superseded by the approved per-platform ownership model and is covered by T57 and T58.
 
+Current testing evidence: T57 and T58 verify the approved per-platform ownership behavior; the obsolete editor is not treated as current evidence.
+
 ## T34 Ownership Type Display — Superseded
 
 The original detail view displayed one game-wide ownership type. Current per-platform display evidence is recorded under T57 and T58.
+
+Current testing evidence: T57 and T58 verify the approved per-platform display behavior.
 
 ## Ownership Model Revision — Per Platform
 
@@ -334,6 +344,8 @@ Grand Theft Auto VI was verified as Want to Play and not owned, with no owned pl
 ## T39 Local Storage Schema
 
 `data/storage.js` defines version 1 storage under `vgc-library-state`. Snapshots save view preference and editable game fields only: status, favorite, owned, per-platform ownership types, owned platforms, and completion percentage. Validation rejects unsupported statuses, invalid booleans, inconsistent ownership/platform data, invalid ownership types, unknown game IDs, invalid view preferences, and completion values outside 0–100.
+
+Verification: the schema and validation behavior are exercised by the safe-loading and storage-acceptance checks recorded in T40, T41, and T42.
 
 ## T40 Safe Storage Loading
 
